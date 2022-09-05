@@ -17,7 +17,7 @@ namespace MatchPicture.GameFlow
             GameTimer.TimeOver += SetGameOverState;
         }
 
-       private void SetGameOverState()
+       private void SetGameOverState(int i)
         {
             SceneManager.LoadScene("Home");
         }

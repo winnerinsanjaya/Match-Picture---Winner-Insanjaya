@@ -40,7 +40,7 @@ namespace MatchPicture.Home
                 PlayerPrefs.SetInt("selectedtheme", 0);
             }
 
-            Debug.Log(PlayerPrefs.GetInt("selectedtheme"));
+            Debug.Log("THEME + "+PlayerPrefs.GetInt("selectedtheme"));
         }
     }
 }

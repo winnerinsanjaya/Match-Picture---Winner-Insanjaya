@@ -16,7 +16,7 @@ namespace MatchPicture.Tile
         public static UnityAction ReadyToPlay;
 
 
-        public static UnityAction TilesCleared;
+        public static UnityAction<int> TilesCleared;
 
         private int itemFinish;
 
@@ -156,7 +156,7 @@ namespace MatchPicture.Tile
             Debug.Log(itemFinish.ToString());
             if (itemFinish >= itemCount)
             {
-                TilesCleared?.Invoke();
+                TilesCleared?.Invoke(100);
             }
         }
         

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 namespace MatchPicture.Theme
 {
@@ -46,11 +47,12 @@ namespace MatchPicture.Theme
                 themelist = themelistObj.GetComponent<ThemeList>();
                 btnText.text = themelist.themestruct.themes[i].themeName;
                 int price = (themelist.themestruct.themes[i].themePrice);
+                int index = themelist.themestruct.themes.IndexOf(themelist.themestruct.themes[i]);
 
                 Button buyBtn = themeBtn.GetComponent<Button>();
                 _buyThemeButton.Add(buyBtn);
                 buyBtn.onClick.AddListener(delegate {
-                    OnBuyTheme(price);
+                    OnBuyTheme(price, index);
                 });
                // themeBtn.GetComponentInChildren<Text>().text = themelist.themestruct.themes[i].themeName;
             }
@@ -64,8 +66,10 @@ namespace MatchPicture.Theme
             Debug.Log(themelist.themestruct.themes.Count);
         }
 
-        private void OnBuyTheme(int price)
+        private void OnBuyTheme(int price, int i)
         {
+            PlayerPrefs.SetInt("selectedtheme", i);
+            SceneManager.LoadScene("Home");
             Debug.Log(price.ToString());
         }
     }

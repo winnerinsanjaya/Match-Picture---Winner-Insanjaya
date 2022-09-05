@@ -126,5 +126,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultSprite: {fileID: 0}
   themeSprite: {fileID: 0}
-  timeCounter: 0.4
+  timeCounter: 0.6
   isTimer: 0
